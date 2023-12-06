@@ -1,4 +1,5 @@
 import express from "express";
+import userRoute from "./routes/userRoute.js"
 import mongoose from "mongoose";
 import dotenv from 'dotenv'
 dotenv.config()
@@ -8,6 +9,7 @@ const {PORT,MONGODB_URL}=process.env
 //middlewares
 app.use(express.json())
 app.use(cors())
+app.use("/user", userRoute)
 //connect to mongodb
 mongoose.connect(MONGODB_URL)
 .then(()=>{app.listen(PORT,()=>{
