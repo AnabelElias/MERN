@@ -1,5 +1,6 @@
 import UserModel from "../models/UserModel.js";
 import bcryptjs from "bcryptjs"
+import { errorHandler } from "../utils/error.js";
 
 export const signUp=async(req,res,next)=>{
     const {username,email,password}=req.body;
@@ -14,6 +15,6 @@ export const signUp=async(req,res,next)=>{
         const newUser=await  UserModel.create({username,email,password:hashpassword});
         res.status(200).json({newUser})
     } catch (error) {
-        console.log({message:error.message});
+        next(error)
     }
 }
