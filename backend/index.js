@@ -1,5 +1,5 @@
 import express from "express";
-import userRoute from "./routes/userRoute.js"
+import authRoute from "./routes/authRoute.js"
 import mongoose from "mongoose";
 import dotenv from 'dotenv'
 dotenv.config()
@@ -9,7 +9,7 @@ const {PORT,MONGODB_URL}=process.env
 //middlewares
 app.use(express.json())
 app.use(cors())
-app.use("/user", userRoute);
+app.use("/auth", authRoute);
 app.use((err,req,res,next)=>{
     const statusCode=err.statusCode||500;
     const message=err.message||"Internal server error";
@@ -27,3 +27,4 @@ mongoose.connect(MONGODB_URL)
 .catch((error)=>{
     console.log(error)
 })
+console.log('connected to database ')

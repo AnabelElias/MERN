@@ -1,10 +1,10 @@
 import { BrowserRouter,Routes,Route } from "react-router-dom"
-import Home from "./pages/Home"
-import About from "./pages/About"
-import Profile from "./pages/Profile"
-import Signin from "./pages/Signin"
+import Home from "./pages/Home.jsx"
+import About from "./pages/About.jsx"
+import Profile from "./pages/Profile.jsx"
 import SignUp from "./pages/SignUp"
-import Header from "./components/Header"
+import Header from "./components/Header.jsx"
+import SignIn from "./pages/SignIn.jsx"
 const App = () => {
   return (
    <BrowserRouter>
@@ -13,8 +13,8 @@ const App = () => {
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/profile" element={<Profile/>}/>
-        <Route path="/signin" element={<Signin/>}/>
-        <Route path="/signout" element={<SignUp/>}/>
+        <Route path="/signIn" element={<SignIn/>}/>
+        <Route path="/signUp" element={<SignUp/>}/>
     </Routes>
    
    
