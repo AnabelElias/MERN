@@ -9,9 +9,7 @@ export const SignUp=()=> {
 
   const handleChange = (e) => {
     setFormData({
-      ...formData,
-      [e.target.id]: e.target.value,
-    });
+      ...formData,[e.target.id]: e.target.value});
   };
 
   const handleSubmit = async (e) => {
@@ -72,7 +70,7 @@ export const SignUp=()=> {
       </form>
       <div className='flex gap-2 mt-5'>
         <p>Have an account?</p>
-        <Link to={'/signin'}>
+        <Link to={'/signIn'}>
           <span className='text-blue-700'>Sign in</span>
         </Link>
       </div>

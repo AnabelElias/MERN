@@ -63,7 +63,7 @@ const navigate=useNavigate()
         </form>
         <div className='flex gap-2 mt-5'>
         <p>Dont have an account?</p>
-        <Link to={'/signup'}>
+        <Link to={'/signUp'}>
           <span className='text-blue-700'>Sign up</span>
         </Link>
       </div>
